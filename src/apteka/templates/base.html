@@ -9,6 +9,19 @@
 <body>
     <h0>Apteka internetowa</h0>
     <p> <a href="/">Home</a> <a href="/login">Log in</a> <a href="/register"> Register</a> </p>
+    {% if request.user.admin == True %}
+<p>
+    <a href="/admin">Go to admin panel</a>
+</p>
+{% endif %}
+    {% if request.user.active == True %}
+<p>
+    <div class="user_panel">
+    <a href="/logout">Log out</a>
+    </div>
+</p>
+{% endif %}
+
     {% block content%}
 
     {% endblock %}
