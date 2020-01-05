@@ -1,0 +1,11 @@
+
+{% extends 'base.html' %}
+
+ {% block content%}
+
+<h1>Home page</h1>
+Hello {{ request.user.get_name }} {{ request.user.get_surname }}
+
+ {% endblock %}
+
+

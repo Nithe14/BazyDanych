@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -38,8 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'products', 'orders',
-    'opinions',
+    'opinions', 'accounts'
 ]
+
+AUTH_USER_MODEL = 'accounts.User'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -56,7 +60,8 @@ ROOT_URLCONF = 'apteka.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'),
+                 ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -68,6 +73,8 @@ TEMPLATES = [
         },
     },
 ]
+
+LOGIN_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'apteka.wsgi.application'
 
@@ -82,10 +89,12 @@ DATABASES = {
         'USER': 'Ea1riYpCYq',
         'PASSWORD': 'Lu3Eor81w0',
         'HOST': 'remotemysql.com',
-        'PORT': '3306'
+        'PORT': '3306',
+        'OPTIONS': {
+                    "init_command": "SET foreign_key_checks = 0;",
+            },
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
