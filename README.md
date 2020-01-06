@@ -1,6 +1,8 @@
 # Projekt Bazy Danych
 
 Apteka internetowa z wykorzystaniem oprogramowania Django.
+Python 3.7.4
+Django 3.0.2
 
 Aby program działał poprawnie konieczna jest instalacja mysqlclient w srodowisku, z którego korzystamy.
 
