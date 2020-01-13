@@ -22,9 +22,12 @@ class SimpleProduct(models.Model):
     producer        = models.CharField(max_length=150, default='')
     ex_date         = models.DateTimeField(auto_now_add=False)
     barcode         = models.BigIntegerField(primary_key=True, unique = True)
-    dose            = models.CharField(max_length=50, default='')
+    created         = models.DateTimeField(auto_now_add = True)
+    updated         = models.DateTimeField(auto_now = True)
+    price           = models.DecimalField(max_digits=20, decimal_places=2)
 
-    REQUIRED_FIELDS = ['name', 'producer', 'ex_date', 'barcode']
+    class Meta:
+        ordering = ('-created',)
 
     ########GETS###########
 
