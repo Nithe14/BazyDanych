@@ -85,9 +85,9 @@ WSGI_APPLICATION = 'apteka.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Ea1riYpCYq',
-        'USER': 'Ea1riYpCYq',
-        'PASSWORD': 'Lu3Eor81w0',
+        'NAME': 'ejugCkOec1',
+        'USER': 'ejugCkOec1',
+        'PASSWORD': 'XVqiekSgjK',
         'HOST': 'remotemysql.com',
         'PORT': '3306',
         'OPTIONS': {

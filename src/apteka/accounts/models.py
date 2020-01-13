@@ -60,7 +60,12 @@ class UserManager(BaseUserManager):
             email,
             name=name,
             surname=surname,
-            #password    = password,
+            phone_number=phone_number,
+            street=street,
+            flat_number=flat_number,
+            post_code=post_code,
+            city=city,
+            password= password,
 
         )
         user.set_password(password)
